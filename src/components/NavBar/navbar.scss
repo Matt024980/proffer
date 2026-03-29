@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+// Brand tokens
+$blue-dark:  #1A2A7A;
+$red:        #D72638;
+$red-hover:  #B81E2D;
+$white:      #FFFFFF;
+
+.lp-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+  background: rgba(26, 42, 122, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  // ── Logo ──────────────────────────────────────
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+
+    img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+
+    span {
+      display: block;
+      font-size: 0.65rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $red;
+    }
+  }
+
+  // ── Nav links ─────────────────────────────────
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+
+    a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  // ── CTA button ────────────────────────────────
+  &__cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $white;
+    background: $red;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s;
+
+    &:hover {
+      background: $red-hover;
+      transform: translateY(-1px);
+    }
+  }
+
+  // ── Responsive ────────────────────────────────
+  @media (max-width: 768px) {
+    padding: 0 6%;
+
+    &__links {
+      display: none;
+    }
+  }
+}
